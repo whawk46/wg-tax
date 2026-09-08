@@ -113,7 +113,7 @@ To ensure global compliance across autonomous agent transactions without protoco
 ### 8.2 EOA & Smart Account Agnostic In-Band `principalAttribution` & Signed Payload Invariant
 Legal attribution MUST NOT require the deployment of a smart contract account. Furthermore, to prevent intermediate hops (agent runtimes, aggregators, API gateways) from forging or attaching an unauthorized principal attribution, `onBehalfOf` / `principalAttribution` **MUST sit inside the signed authorization payload**.
 
-The wallet signature binds the `{ challenge, onBehalfOf }` tuple directly, guaranteeing that the settlement receipt's `principalAttribution` is derived directly from the verified signature rather than self-reported or appended post-hoc at settlement time.
+The wallet signature binds the `{ challengeDigest, onBehalfOf }` tuple directly, guaranteeing that the settlement receipt's `principalAttribution` is derived directly from the verified signature rather than self-reported or appended post-hoc at settlement time.
 
 ```json
 {
